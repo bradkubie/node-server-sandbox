@@ -1,15 +1,22 @@
 const express = require("express");
 const { Configuration, OpenAIApi } = require("openai");
 const bodyParser = require("body-parser");
+console.log(__dirname);
+require("dotenv").config({
+  path: __dirname + "/.env",
+});
 
 const app = express();
 app.use(bodyParser.json());
+console.log(process.env.OPEN_AI_KEY);
 
 const configuration = new Configuration({
-  apiKey: "",
+  apiKey: process.env.OPEN_AI_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
+
+console.log(process.env.OPEN_AI_KEY);
 
 // Routes
 app.get("/", async (req, res) => {

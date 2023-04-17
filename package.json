@@ -5,7 +5,7 @@
   "main": "node_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node node_server.js"
+    "dev": "node -r dotenv/config node_server.js"
   },
   "author": "",
   "license": "ISC",
